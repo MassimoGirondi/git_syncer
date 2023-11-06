@@ -1,0 +1,16 @@
+services:
+  syncer:
+    image: git_syncer:latest
+    build: .
+    volumes:
+      # Where to operate
+      - ./myrepo:/workspace
+      # Public key to login with ssh
+      - /home/user/.ssh/id_rsa:/root/.ssh/id_rsa:ro
+    environment:
+      - PULL_BRANCH=master
+      - PUSH_BRANCH=autosync
+      - PULL_URL=https://git.overleaf.com/wathever_prj
+      - PUSH_URL=git@github.com:username/my_prj.git
+    restart: no
+      
