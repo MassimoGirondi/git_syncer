@@ -1,5 +1,8 @@
-FROM alpine:latest
+FROM alpine:latest AS base
 RUN apk add git bash openssh
+RUN rm -rf /var/cache/apk/*
+
+FROM base
 COPY syncer.sh /
 ENV PULL_URL=pull
 ENV PUSH_URL=push
