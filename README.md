@@ -16,3 +16,6 @@ Edit `docker-compose.yaml` with your parameters, and `sudo docker compose run sy
 This will run the container in a interactive way, allowing you to accept host keys and (hopefully not) insert HTTP passwords.
 
 
+# License
+
+The code in this repository is licensed under the GNU Public License v3, see LICENSE to know more.
